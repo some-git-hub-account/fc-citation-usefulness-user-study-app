@@ -69,5 +69,710 @@
             "prompt_tokens": 1162,
             "completion_tokens": 37
         }
+    },
+    {
+        "idx": 44,
+        "dataset": "averitec_short_ans",
+        "query": "You are an expert fact-checker. You are provided with a claim and related evidence. Based only on the provided evidence, determine if the given claim is either supported, refuted, has conflicting evidence, or has not enough evidence to determine its veracity. Write a single sentence that states your verdict and the main reason for it, referencing and synthesizing the most relevant pieces of evidence that support your verdict. Do not copy sentences from the evidence verbatim. Always paraphrase and synthesize the evidence in your own words.\n\nClaim: U.S. aid dollars sent to Ukraine under Biden\u2019s supervision went toward Burisma, where Biden\u2019s son Hunter was a board member.",
+        "prediction": "<statement>The claim that U.S. aid dollars sent to Ukraine under Biden's supervision went toward Burisma, where Biden's son Hunter was a board member, is not supported by the evidence provided.<cite></cite></statement>\n\n<statement>The evidence shows that Hunter Biden was indeed appointed to the board of Burisma in 2014 while his father was running U.S. Ukraine policy. However, there is no evidence that U.S. aid dollars went toward Burisma specifically. Instead, the evidence suggests Burisma was owned by a Ukrainian oligarch who was a sponsor of the current Ukrainian president, and that Hunter Biden was paid a significant amount for no relevant expertise or investment in the company.<cite>[1-1][6-6][8-8]</cite></statement>",
+        "claim": "U.S. aid dollars sent to Ukraine under Biden\u2019s supervision went toward Burisma, where Biden\u2019s son Hunter was a board member.",
+        "label": "Not Enough Evidence",
+        "pred_label": "Refuted",
+        "justification": "There is nothing to prove that the aid went through Burisma ",
+        "decomposed_model_answer": [
+            [],
+            [
+                "Hunter Biden was appointed to the board of Burisma in 2014.",
+                "Hunter Biden's father was running U.S. Ukraine policy in 2014.",
+                "There is no evidence that U.S. aid dollars went toward Burisma specifically.",
+                "Burisma was owned by a Ukrainian oligarch.",
+                "The Ukrainian oligarch who owned Burisma was a sponsor of the current Ukrainian president.",
+                "Hunter Biden was paid a significant amount for his position on Burisma's board.",
+                "Hunter Biden had no relevant expertise for his position on Burisma's board.",
+                "Hunter Biden made no investment in Burisma."
+            ]
+        ],
+        "statements": [
+            {
+                "statement": "The claim that U.S. aid dollars sent to Ukraine under Biden's supervision went toward Burisma, where Biden's son Hunter was a board member, is not supported by the evidence provided.",
+                "citation": [],
+                "support_output": "Analysis: The sentence in question is the opening statement of the response, which provides an overall verdict on the claim. It states that the claim is \"not supported by the evidence provided.\" This is a summary judgment about the claim's veracity based on the source text as a whole, rather than a statement that references or relies on a specific piece of evidence from the source text. According to the instructions, such verdict or judgment sentences, even if they make a factual assertion about the claim's support, do not require a citation because they are introductory or summary in nature.\n\nNeed Citation: [[No]]",
+                "support_score": 1
+            },
+            {
+                "statement": "The evidence shows that Hunter Biden was indeed appointed to the board of Burisma in 2014 while his father was running U.S. Ukraine policy. However, there is no evidence that U.S. aid dollars went toward Burisma specifically. Instead, the evidence suggests Burisma was owned by a Ukrainian oligarch who was a sponsor of the current Ukrainian president, and that Hunter Biden was paid a significant amount for no relevant expertise or investment in the company.",
+                "citation": [
+                    {
+                        "cite": "was being paid quite a lot for no relevant expertise and no investment in the company\u2026so what was he being paid for, exactly?",
+                        "span": [
+                            9,
+                            9
+                        ],
+                        "score": 52.46024839461595,
+                        "relevant_output": "Rating: [[Relevant]]  \n",
+                        "relevant_score": 1,
+                        "pre_context": "Yves writes:\nRichard [Smith] did a deep dive into the dodgy appointment of Hunter Biden and then Secretary of State John Kerry\u2019s long-standing bundler, Devon Archer, to the board of Burisma Holdings. Richard quickly got past the noteworthy fact that Biden Jr.",
+                        "post_context": "Oh, and Richard also describes how Hunter\u2019s and his uncle James Biden\u2019s past financial rides were with con artists.But the real puzzlement is that from everything that can be inferred, Burisma is either tiny or just a shell company. So who is behind these big director payoffs payouts?"
+                    },
+                    {
+                        "cite": "Kolomoisky is the sponsor of the current President of Ukraine Volodymyr Zelensky.",
+                        "span": [
+                            20,
+                            20
+                        ],
+                        "score": 16.92407115467149,
+                        "relevant_output": "Rating: [[Irrelevant]]  \n",
+                        "relevant_score": 0,
+                        "pre_context": "Pinchuk refused to comment, but is said to have a good relationship with the Democratic Party in the US, and is also believed to have been a long time friend of former Polish President Kwasniewski.\nKwasniewski was, like Hunter Biden and his friend Devon Archer, appointed to the board of Burisma.",
+                        "post_context": "No one seems to know who really owns the company. Whoever does has hidden behind a bunch of shell companies in Cyprus and Britain."
+                    },
+                    {
+                        "cite": "The first regards the ownership of the company which hired Joe Biden\u2019s son Hunter for an exorbitant amount of money while Joe Biden ran the U.S. Ukraine policy.",
+                        "span": [
+                            1,
+                            2
+                        ],
+                        "score": 14.604624781592571,
+                        "relevant_output": "Rating: [[Relevant]]  \n",
+                        "relevant_score": 1,
+                        "pre_context": "There are some serious questions around the Biden family involvement in the Ukraine that the media have not picked up on.",
+                        "post_context": "The second question is about the firing of the Viktor Shokin, the former Prosecutor General of the Ukraine. Trump accuses Joe Biden of having intervened in favor of his son\u2019s sponsor to get Shokin fired."
+                    }
+                ],
+                "support_output": "Rating: [[Partially supported]]  \n",
+                "support_score": 0.5
+            }
+        ],
+        "citation_recall": 0.75,
+        "citation_precision": 0.6666666666666666,
+        "citation_f1": 0.7058823529411765,
+        "gpt_usage": {
+            "prompt_tokens": 1911,
+            "completion_tokens": 157
+        }
+    },
+    {
+        "idx": 101,
+        "dataset": "averitec_short_ans",
+        "query": "You are an expert fact-checker. You are provided with a claim and related evidence. Based only on the provided evidence, determine if the given claim is either supported, refuted, has conflicting evidence, or has not enough evidence to determine its veracity. Write a single sentence that states your verdict and the main reason for it, referencing and synthesizing the most relevant pieces of evidence that support your verdict. Do not copy sentences from the evidence verbatim. Always paraphrase and synthesize the evidence in your own words.\n\nClaim: Donald Trump made Juneteenth \"very famous,\" as he described in a Wall Street Journal interview June 17, 2020. Prior to him planning a rally on June 19, \"nobody had ever heard of it.\"",
+        "prediction": "<statement>The claim that Donald Trump made Juneteenth \"very famous\" is not supported by the evidence. The history of Juneteenth is clearly documented as originating in Texas in 1865, with celebrations starting the following year. By the early 20th century, it was celebrated in many states. In the mid-20th century, it gained significance as part of the Civil Rights movement. In 1980, Texas made it a state holiday and it has been recognized by many states since then. Trump's suggestion that no one knew about it before he planned a rally in Tulsa in June 2020 ignores this history.<cite>[42-42][43-43][44-44]</cite></statement>",
+        "claim": "Donald Trump made Juneteenth \"very famous,\" as he described in a Wall Street Journal interview June 17, 2020. Prior to him planning a rally on June 19, \"nobody had ever heard of it.\"",
+        "label": "Refuted",
+        "pred_label": "Refuted",
+        "justification": "it's clear from the answers that Juneteenth had been famous for a very long time, prior to Donald Trump",
+        "decomposed_model_answer": [
+            [
+                "The claim that Donald Trump made Juneteenth 'very famous' is not supported by the evidence.",
+                "Juneteenth originated in Texas in 1865.",
+                "Celebrations of Juneteenth started in 1866.",
+                "By the early 20th century, Juneteenth was celebrated in many states.",
+                "In the mid-20th century, Juneteenth gained significance as part of the Civil Rights movement.",
+                "In 1980, Texas made Juneteenth a state holiday.",
+                "Juneteenth has been recognized by many states since 1980.",
+                "Donald Trump suggested that no one knew about Juneteenth before he planned a rally in Tulsa in June 2020.",
+                "Donald Trump's suggestion ignores the history of Juneteenth."
+            ]
+        ],
+        "statements": [
+            {
+                "statement": "The claim that Donald Trump made Juneteenth \"very famous\" is not supported by the evidence. The history of Juneteenth is clearly documented as originating in Texas in 1865, with celebrations starting the following year. By the early 20th century, it was celebrated in many states. In the mid-20th century, it gained significance as part of the Civil Rights movement. In 1980, Texas made it a state holiday and it has been recognized by many states since then. Trump's suggestion that no one knew about it before he planned a rally in Tulsa in June 2020 ignores this history.",
+                "citation": [
+                    {
+                        "cite": "But his suggestion that no one knew about it ignores history; the day has held significance for millions of Americans for decades.",
+                        "span": [
+                            55,
+                            55
+                        ],
+                        "score": 14.164902579906528,
+                        "relevant_output": "Rating: [[Relevant]]  \n",
+                        "relevant_score": 1,
+                        "pre_context": "It is fair to say that outrage over George Floyd\u2019s death while in police custody, combined with vocal demonstrations and the Black Lives Matter movement, have raised the profile of Juneteenth and its meaning to new heights. Trump\u2019s planned rally in Tulsa fueled that sentiment.",
+                        "post_context": "Juneteenth stems from June 19, 1865, when Union troops under Gen. Gordon Granger landed in Galveston, Texas."
+                    },
+                    {
+                        "cite": "The history is clear.",
+                        "span": [
+                            81,
+                            81
+                        ],
+                        "score": 4.752513414030555,
+                        "relevant_output": "Rating: [[Irrelevant]]  \n",
+                        "relevant_score": 0,
+                        "pre_context": "Under Trump, the White House has issued statements every year to recognize Juneteenth.\nTrump said that nobody had heard of Juneteenth until this year.",
+                        "post_context": "Long before Trump was elected president, millions of Americans knew about the day that marks the end of slavery in America.\nWe rate this claim Pants on Fire."
+                    },
+                    {
+                        "cite": "Featured Fact-check\nIn 1980, Texas made June 19 a state holiday.",
+                        "span": [
+                            65,
+                            65
+                        ],
+                        "score": 3.9346204605454687,
+                        "relevant_output": "Rating: [[Relevant]]\n",
+                        "relevant_score": 1,
+                        "pre_context": "\"Today, if Americans have any knowledge at all about commemorations of the end of U.S. slavery, their reference point is generally Juneteenth,\" historian Mitch Kachun wrote in 2007.",
+                        "post_context": "Today, 47 states recognize the day. New York and Virginia just moved to make it a state holiday."
+                    }
+                ],
+                "support_output": "Rating: [[Partially supported]]  \n",
+                "support_score": 0.5
+            }
+        ],
+        "citation_recall": 0.5,
+        "citation_precision": 0.6666666666666666,
+        "citation_f1": 0.5714285714285715,
+        "gpt_usage": {
+            "prompt_tokens": 1392,
+            "completion_tokens": 36
+        }
+    },
+    {
+        "idx": 21,
+        "dataset": "averitec_short_ans",
+        "query": "You are an expert fact-checker. You are provided with a claim and related evidence. Based only on the provided evidence, determine if the given claim is either supported, refuted, has conflicting evidence, or has not enough evidence to determine its veracity. Write a single sentence that states your verdict and the main reason for it, referencing and synthesizing the most relevant pieces of evidence that support your verdict. Do not copy sentences from the evidence verbatim. Always paraphrase and synthesize the evidence in your own words.\n\nClaim: President Muhammadu Buhari of Nigeria said We have witnessed 11 quarters of consecutive GDP growth since exiting recession.",
+        "prediction": "<statement>Based on the provided evidence, the claim that President Muhammadu Buhari of Nigeria said \"We have witnessed 11 quarters of consecutive GDP growth since exiting recession\" is **not supported**.<cite></cite></statement>\n\n<statement>The evidence shows that while Nigeria exited recession in the second quarter of 2017 and has seen some growth since then, there is no mention of 11 quarters of consecutive GDP growth. Instead, the evidence states that the IMF forecasts Nigeria will grow by 0.8% in 2017, although the government is targeting 2.2% growth.<cite>[28-29][31-31]</cite></statement>\n\n<statement>The evidence also shows that while Nigeria has seen some growth since exiting recession, it is still recovering from a difficult period and faces many challenges, including high unemployment, inflation, and an infrastructure gap. The government has implemented various strategies to promote growth and diversification, but the evidence does not support the claim of 11 quarters of consecutive GDP growth.<cite>[5-5][10-10][11-11]</cite></statement>",
+        "claim": "President Muhammadu Buhari of Nigeria said We have witnessed 11 quarters of consecutive GDP growth since exiting recession.",
+        "label": "Supported",
+        "pred_label": "Refuted",
+        "justification": "It seems that indeed GDP has gone up 11 quarters, therefore the label is supported",
+        "decomposed_model_answer": [
+            [],
+            [
+                "Nigeria exited recession in the second quarter of 2017.",
+                "Nigeria has seen some growth since exiting recession.",
+                "There is no mention of 11 quarters of consecutive GDP growth.",
+                "The IMF forecasts Nigeria will grow by 0.8% in 2017.",
+                "The government of Nigeria is targeting 2.2% growth in 2017."
+            ],
+            [
+                "Nigeria has seen some growth since exiting recession.",
+                "Nigeria is still recovering from a difficult period.",
+                "Nigeria faces many challenges, including high unemployment, inflation, and an infrastructure gap.",
+                "The government of Nigeria has implemented various strategies to promote growth and diversification.",
+                "The evidence does not support the claim of 11 quarters of consecutive GDP growth."
+            ]
+        ],
+        "statements": [
+            {
+                "statement": "Based on the provided evidence, the claim that President Muhammadu Buhari of Nigeria said \"We have witnessed 11 quarters of consecutive GDP growth since exiting recession\" is **not supported**.",
+                "citation": [],
+                "support_output": "Analysis: The sentence in question is the opening statement of the response, which provides an overall verdict on the claim. It states that the claim is \"not supported\" based on the evidence. This is a summary judgment about the claim's veracity, not a statement that references or relies on a specific piece of evidence from the source text. According to the instructions, such verdict or judgment sentences that do not reference specific evidence count as introductory or summary sentences and do not require a citation.\n\nNeed Citation: [[No]]",
+                "support_score": 1
+            },
+            {
+                "statement": "The evidence shows that while Nigeria exited recession in the second quarter of 2017 and has seen some growth since then, there is no mention of 11 quarters of consecutive GDP growth. Instead, the evidence states that the IMF forecasts Nigeria will grow by 0.8% in 2017, although the government is targeting 2.2% growth.",
+                "citation": [
+                    {
+                        "cite": "The IMF forecasts that the country will escape recession in 2017, with growth of 0.8%, though the government is targeting 2.2% growth.",
+                        "span": [
+                            29,
+                            29
+                        ],
+                        "score": 51.49234409217034,
+                        "relevant_output": "Rating: [[Relevant]]  \n",
+                        "relevant_score": 1,
+                        "pre_context": "The largest component of the agricultural sector, crop production \u2013 which has benefitted from government efforts to improve import substitution and food security \u2013 accounted for 88% of the sector during the fourth quarter of 2016, and its growth of 4.3% outpaced the sector as a whole.\nExiting Recession\nAlthough still likely to fall short of the targets Nigeria needs to hit to reduce poverty and improve development indicators, 2017 looks brighter.",
+                        "post_context": "\u201cWe are somewhat optimistic because 2017 started well and the outlook points to the rest of the year seeing a slight economic upturn and slight relief in the economy,\u201d Nella Hengstler, commercial counsellor at the Austrian Embassy, told OBG. \u201cSome sectors outside of oil and gas are receiving more attention, but it remains to be seen whether all of the agriculture and solar projects will happen.\u201d\nThe economy exited the recession in the second quarter of 2017 when it grew by 0.6% in real terms, according to the NBS."
+                    }
+                ],
+                "support_output": "Rating: [[Fully supported]]  \n",
+                "support_score": 1
+            },
+            {
+                "statement": "The evidence also shows that while Nigeria has seen some growth since exiting recession, it is still recovering from a difficult period and faces many challenges, including high unemployment, inflation, and an infrastructure gap. The government has implemented various strategies to promote growth and diversification, but the evidence does not support the claim of 11 quarters of consecutive GDP growth.",
+                "citation": [
+                    {
+                        "cite": "By some estimates the country faces a $300bn infrastructure gap, equivalent to nearly 25% of its GDP.",
+                        "span": [
+                            131,
+                            131
+                        ],
+                        "score": 9.597148273283,
+                        "relevant_output": "Rating: [[Relevant]]  \n",
+                        "relevant_score": 1,
+                        "pre_context": "\u201cMoving the manufacturing industry from where it is now to the point at which it can compete in the global market will take time,\u201d Olajire Abati, research analyst at the NESG, told OBG. \u201cWe need FDI that will bring the expertise and technology that will jumpstart that process.\u201d\nInfrastructure\nUltimately, Nigeria needs to address the structural impediments to unleash the full potential of the private sector.",
+                        "post_context": "Substandard infrastructure acts as a barrier to significantly lowering inflation. Tolu Osinibi, executive director at FCMB Capital Markets, told OBG, \u201cPoor infrastructure will always have an impact on cost: the costs of moving food, selling produce, building houses, power \u2013 it all adds up."
+                    },
+                    {
+                        "cite": "Government Strategies\nIn response to the 2016 recession, the government launched the ERGP in March 2017.",
+                        "span": [
+                            34,
+                            34
+                        ],
+                        "score": 4.293191948431724,
+                        "relevant_output": "Rating: [[Irrelevant]]  \n",
+                        "relevant_score": 0,
+                        "pre_context": "The recovery was driven by the performance of four economic activities: oil, agriculture, manufacturing and trade. Oil production averaged 1.84m bpd, 0.15m barrels higher than the daily average production recorded in the first quarter of the year.",
+                        "post_context": "It identifies five priority areas: stabilising the macroeconomic environment; achieving agricultural and food security; improving transport infrastructure; ensuring energy sufficiency; and driving industrialisation through the growth of small and medium-sized enterprises (SMEs). The plan includes taking a holistic approach to fiscal, monetary and trade policies, diversifying government revenues away from dependency on oil, cutting costs and privatising government assets."
+                    }
+                ],
+                "support_output": "Rating: [[Partially supported]]  \n",
+                "support_score": 0.5
+            }
+        ],
+        "citation_recall": 0.8333333333333334,
+        "citation_precision": 0.6666666666666666,
+        "citation_f1": 0.7407407407407408,
+        "gpt_usage": {
+            "prompt_tokens": 2181,
+            "completion_tokens": 150
+        }
+    },
+    {
+        "idx": 25,
+        "dataset": "averitec_short_ans",
+        "query": "You are an expert fact-checker. You are provided with a claim and related evidence. Based only on the provided evidence, determine if the given claim is either supported, refuted, has conflicting evidence, or has not enough evidence to determine its veracity. Write a single sentence that states your verdict and the main reason for it, referencing and synthesizing the most relevant pieces of evidence that support your verdict. Do not copy sentences from the evidence verbatim. Always paraphrase and synthesize the evidence in your own words.\n\nClaim: Under the government\u2019s new immigration rules anyone earning less than \u00a325,600 is regarded as an unskilled worker.",
+        "prediction": "<statement>The claim that under the government's new immigration rules anyone earning less than \u00a325,600 is regarded as an unskilled worker is supported by the evidence.<cite>[78-78]</cite></statement>\n\n<statement>The Migration Advisory Committee recommended lowering the general salary threshold from \u00a330,000 to \u00a325,600, and migrants will still need to be paid the higher of the specific salary threshold for their occupation and the general salary threshold.<cite>[78-79]</cite></statement>\n\n<statement>The evidence states that migrants will still need to meet the general salary threshold of \u00a325,600, which supports the claim that anyone earning less than \u00a325,600 is regarded as an unskilled worker under the new immigration rules.<cite>[78-78]</cite></statement>",
+        "claim": "Under the government\u2019s new immigration rules anyone earning less than \u00a325,600 is regarded as an unskilled worker.",
+        "label": "Refuted",
+        "pred_label": "Supported",
+        "justification": "A pay of \u00a325,600 does not equates to an unskilled  worker level of pay. All workers must earn the same minimum wage. ",
+        "decomposed_model_answer": [
+            [
+                "The Migration Advisory Committee recommended lowering the general salary threshold from \u00a330,000 to \u00a325,600.",
+                "Migrants will need to be paid the higher of the specific salary threshold for their occupation and the general salary threshold.",
+                "Migrants will need to meet the general salary threshold of \u00a325,600."
+            ],
+            [],
+            []
+        ],
+        "statements": [
+            {
+                "statement": "The claim that under the government's new immigration rules anyone earning less than \u00a325,600 is regarded as an unskilled worker is supported by the evidence.",
+                "citation": [],
+                "support_output": "Analysis: The sentence in question is the opening statement of the response, which provides an overall verdict on the claim. It asserts that the claim is \"supported by the evidence,\" but it does not reference or rely on any specific piece of evidence from the source text. Instead, it serves as an introductory summary of the assistant's judgment. According to the guidelines, such a sentence stating an overall verdict without citing specific evidence does not require a citation.\n\nNeed Citation: [[No]]",
+                "support_score": 1
+            },
+            {
+                "statement": "The Migration Advisory Committee recommended lowering the general salary threshold from \u00a330,000 to \u00a325,600, and migrants will still need to be paid the higher of the specific salary threshold for their occupation and the general salary threshold.",
+                "citation": [
+                    {
+                        "cite": "We accept the MAC\u2019s recommendation on salary thresholds, including to lower the general salary threshold from \u00a330,000 to \u00a325,600. Migrants will still need to be paid the higher of the specific salary threshold for their occupation, known as the \u2018going rate\u2019, and the general salary threshold.",
+                        "span": [
+                            78,
+                            79
+                        ],
+                        "score": 53.98359690196562,
+                        "relevant_output": "Rating: [[Relevant]]  \n",
+                        "relevant_score": 1,
+                        "pre_context": "We are grateful for its considered work.\n4.",
+                        "post_context": "However, as set out below, under the points-based system for skilled workers, applicants will be able to \u2018trade\u2019 characteristics such as their specific job offer and qualifications against a lower salary. There will continue to be different arrangements for a small number of occupations where the salary threshold will be based on published pay scales."
+                    },
+                    {
+                        "cite": "The Migration Advisory Committee (MAC) published its report on salary thresholds and points-based systems on 28 January.",
+                        "span": [
+                            75,
+                            75
+                        ],
+                        "score": 5.079314481989731,
+                        "relevant_output": "Rating: [[Irrelevant]]\n",
+                        "relevant_score": 0,
+                        "pre_context": "This policy statement focuses on the first phase of changes being introduced in 2021.\nSalary and skills thresholds\n3.",
+                        "post_context": "We are grateful for its considered work.\n4."
+                    },
+                    {
+                        "cite": "We will implement the MAC\u2019s recommendation to bring the skills threshold down from RQF6 to RQF3.",
+                        "span": [
+                            85,
+                            85
+                        ],
+                        "score": 3.5342514005588535,
+                        "relevant_output": "Rating: [[Irrelevant]]  \n",
+                        "relevant_score": 0,
+                        "pre_context": "Additionally, in line with the MAC\u2019s recommendations, we will not introduce regional salary thresholds or different arrangements for different parts of the UK.\n5.",
+                        "post_context": "We will suspend the cap on the number of people who can come on the skilled worker route and remove the resident labour market test. These changes will ensure that a wide pool of skilled workers will be able to come to the UK from anywhere in the world and the process will be made simpler and quicker for employers."
+                    }
+                ],
+                "support_output": "Rating: [[Fully supported]]  \n",
+                "support_score": 1
+            },
+            {
+                "statement": "The evidence states that migrants will still need to meet the general salary threshold of \u00a325,600, which supports the claim that anyone earning less than \u00a325,600 is regarded as an unskilled worker under the new immigration rules.",
+                "citation": [
+                    {
+                        "cite": "Migrants will still need to be paid the higher of the specific salary threshold for their occupation, known as the \u2018going rate\u2019, and the general salary threshold.",
+                        "span": [
+                            79,
+                            79
+                        ],
+                        "score": 2.4303919268463696,
+                        "relevant_output": "Rating: [[Irrelevant]]\n",
+                        "relevant_score": 0,
+                        "pre_context": "4. We accept the MAC\u2019s recommendation on salary thresholds, including to lower the general salary threshold from \u00a330,000 to \u00a325,600.",
+                        "post_context": "However, as set out below, under the points-based system for skilled workers, applicants will be able to \u2018trade\u2019 characteristics such as their specific job offer and qualifications against a lower salary. There will continue to be different arrangements for a small number of occupations where the salary threshold will be based on published pay scales."
+                    }
+                ],
+                "support_output": "Rating: [[Partially supported]]\n",
+                "support_score": 0.5
+            }
+        ],
+        "citation_recall": 0.8333333333333334,
+        "citation_precision": 0.25,
+        "citation_f1": 0.3846153846153846,
+        "gpt_usage": {
+            "prompt_tokens": 2350,
+            "completion_tokens": 148
+        }
+    },
+    {
+        "idx": 26,
+        "dataset": "averitec_short_ans",
+        "query": "You are an expert fact-checker. You are provided with a claim and related evidence. Based only on the provided evidence, determine if the given claim is either supported, refuted, has conflicting evidence, or has not enough evidence to determine its veracity. Write a single sentence that states your verdict and the main reason for it, referencing and synthesizing the most relevant pieces of evidence that support your verdict. Do not copy sentences from the evidence verbatim. Always paraphrase and synthesize the evidence in your own words.\n\nClaim: Surgical masks were designed and approved for sterile environments. Every time a person puts on their (surgical) mask they are breathing in the germs from everywhere they went. They should be changed or thrown out every 20-30 minutes in a non sterile environment.",
+        "prediction": "<statement>The claim that surgical masks should be changed or thrown out every 20-30 minutes in a non-sterile environment is not supported by the evidence provided. The evidence states that surgical masks are designed to prevent large droplets of bodily fluids that may contain viruses or other germs from escaping via the nose and mouth, and to protect against splashes and sprays from other people. The evidence does not mention anything about surgical masks being designed for sterile environments or the need to change them every 20-30 minutes in non-sterile environments.<cite>[183-186]</cite></statement>",
+        "claim": "Surgical masks were designed and approved for sterile environments. Every time a person puts on their (surgical) mask they are breathing in the germs from everywhere they went. They should be changed or thrown out every 20-30 minutes in a non sterile environment.",
+        "label": "Refuted",
+        "pred_label": "Refuted",
+        "justification": "QA pair states should only be changed when dirty or damaged and not at fixed time periods.",
+        "decomposed_model_answer": [
+            [
+                "Surgical masks are designed to prevent large droplets of bodily fluids that may contain viruses or other germs from escaping via the nose and mouth.",
+                "Surgical masks are designed to protect against splashes and sprays from other people."
+            ]
+        ],
+        "statements": [
+            {
+                "statement": "The claim that surgical masks should be changed or thrown out every 20-30 minutes in a non-sterile environment is not supported by the evidence provided. The evidence states that surgical masks are designed to prevent large droplets of bodily fluids that may contain viruses or other germs from escaping via the nose and mouth, and to protect against splashes and sprays from other people. The evidence does not mention anything about surgical masks being designed for sterile environments or the need to change them every 20-30 minutes in non-sterile environments.",
+                "citation": [
+                    {
+                        "cite": "These masks prevent large droplets of bodily fluids that may contain viruses or other germs from escaping via the nose and mouth. They also protect against splashes and sprays from other people, such as those from sneezes and coughs.",
+                        "span": [
+                            185,
+                            186
+                        ],
+                        "score": 36.228778905307024,
+                        "relevant_output": "Rating: [[Relevant]]  \n",
+                        "relevant_score": 1,
+                        "pre_context": "Surgical face masks\nSurgical face masks are fairly loose-fitting, disposable masks approved by the Food and Drug Administration (FDA) for use as medical devices. Doctors, dentists, and nurses often wear them while treating patients.",
+                        "post_context": "Buy surgical face masks from Amazon or Walmart.\nRespirators\nRespirators, also called N95 masks, are designed to protect the wearer from small particles in the air, like viruses."
+                    }
+                ],
+                "support_output": "Rating: [[Fully supported]]  \n",
+                "support_score": 1
+            }
+        ],
+        "citation_recall": 1.0,
+        "citation_precision": 1.0,
+        "citation_f1": 1.0,
+        "gpt_usage": {
+            "prompt_tokens": 738,
+            "completion_tokens": 19
+        }
+    },
+    {
+        "idx": 42,
+        "dataset": "averitec_short_ans",
+        "query": "You are an expert fact-checker. You are provided with a claim and related evidence. Based only on the provided evidence, determine if the given claim is either supported, refuted, has conflicting evidence, or has not enough evidence to determine its veracity. Write a single sentence that states your verdict and the main reason for it, referencing and synthesizing the most relevant pieces of evidence that support your verdict. Do not copy sentences from the evidence verbatim. Always paraphrase and synthesize the evidence in your own words.\n\nClaim: The last time people created a Hollywood blacklist, people ended up killing themselves. They were accused, and they lost their right to work.",
+        "prediction": "<statement>The evidence does not support the claim that people killed themselves as a result of the Hollywood blacklist. The claim is refuted by the fact that while some people were negatively affected by the blacklist, it did not lead to suicides.<cite>[255-255]</cite></statement>",
+        "claim": "The last time people created a Hollywood blacklist, people ended up killing themselves. They were accused, and they lost their right to work.",
+        "label": "Supported",
+        "pred_label": "Refuted",
+        "justification": "this is supported, the answers show that the blacklist existed, and lost the people the right to work, and one even killed themselves. ",
+        "decomposed_model_answer": [
+            [
+                "The evidence does not support the claim that people killed themselves as a result of the Hollywood blacklist.",
+                "The claim is refuted by the fact that while some people were negatively affected by the blacklist, it did not lead to suicides."
+            ]
+        ],
+        "statements": [
+            {
+                "statement": "The evidence does not support the claim that people killed themselves as a result of the Hollywood blacklist. The claim is refuted by the fact that while some people were negatively affected by the blacklist, it did not lead to suicides.",
+                "citation": [
+                    {
+                        "cite": "history when people who were blacklisted by the studios-writers, directors, and actors-never worked again, fled the country, worked under aliases, or even, in one extreme case, committed suicide.",
+                        "span": [
+                            255,
+                            255
+                        ],
+                        "score": null,
+                        "relevant_output": "Rating: [[Irrelevant]]  \n",
+                        "relevant_score": 0,
+                        "pre_context": "In 1952, Kazan appeared before the House Committee on Un-American Activities and named eight of his old friends from the Group Theater who in the 1930s, along with him, had been members of the American Communist Party.\nMany in Hollywood are still outraged about that time in U.S.",
+                        "post_context": "Five hundred protesters gather outside the Dorothy Chandler Pavilion, with placards that read \u201cElia Kazan: Nominated for Benedict Arnold Award,\u201d \u201cDon\u2019t Whitewash the Blacklist,\u201d and \u201cKazan-the Linda Tripp of the 50s.\u201d\nKazan\u2019s testimony was a bitter pill for many on the left. It was widely perceived that, unlike so many others, Kazan had an alternative to naming names: the Broadway theater."
+                    }
+                ],
+                "support_output": "Rating: [[No support]]  \n",
+                "support_score": 0
+            }
+        ],
+        "citation_recall": 0.0,
+        "citation_precision": 0.0,
+        "citation_f1": 0.0,
+        "gpt_usage": {
+            "prompt_tokens": 612,
+            "completion_tokens": 18
+        }
+    },
+    {
+        "idx": 46,
+        "dataset": "averitec_short_ans",
+        "query": "You are an expert fact-checker. You are provided with a claim and related evidence. Based only on the provided evidence, determine if the given claim is either supported, refuted, has conflicting evidence, or has not enough evidence to determine its veracity. Write a single sentence that states your verdict and the main reason for it, referencing and synthesizing the most relevant pieces of evidence that support your verdict. Do not copy sentences from the evidence verbatim. Always paraphrase and synthesize the evidence in your own words.\n\nClaim: Immunization is mandatory in the United States",
+        "prediction": "<statement>Based on the evidence provided, the claim that immunization is mandatory in the United States is supported.<cite>[2-8][26-26]</cite></statement>\n\n<statement>The evidence shows that all 50 states have legislation requiring specified vaccines for students, with exemptions granted for medical reasons and in some cases religious or philosophical beliefs.<cite>[2-5][26-28][29-32]</cite></statement>",
+        "claim": "Immunization is mandatory in the United States",
+        "label": "Refuted",
+        "pred_label": "Supported",
+        "justification": "The 14th Amendment asserts that no state shall make or enforce any law abridging the privileges of citizens of the United States, thus Immunization is not mandatory in the United States. ",
+        "decomposed_model_answer": [
+            [
+                "Immunization is mandatory in the United States."
+            ],
+            [
+                "All 50 states have legislation requiring specified vaccines for students.",
+                "Exemptions are granted for medical reasons.",
+                "In some cases, exemptions are granted for religious or philosophical beliefs."
+            ]
+        ],
+        "statements": [
+            {
+                "statement": "Based on the evidence provided, the claim that immunization is mandatory in the United States is supported.",
+                "citation": [],
+                "support_output": "Analysis: The sentence in question is the opening statement of the response that delivers the overall verdict. It makes a judgment about the claim's veracity (\"is supported\") based on the source text in a general sense, but it does not reference or rely on any specific piece of evidence from the source text, such as mentioning state legislation or exemptions. According to the provided guidelines, a sentence stating an overall verdict without referencing specific evidence counts as an introductory or summary sentence and does not require a citation.\n\nNeed Citation: [[No]]",
+                "support_score": 1
+            },
+            {
+                "statement": "The evidence shows that all 50 states have legislation requiring specified vaccines for students, with exemptions granted for medical reasons and in some cases religious or philosophical beliefs.",
+                "citation": [
+                    {
+                        "cite": "Loading...\nhttps://www.facebook.com/photo.php?fbid=551960552369167&set=a.112646526300574&type=3&eid=ARA1wOXSL8gp3ZK9Edp1G96R3fZiRuCdtHhEvG1VOPJ4DE3iXkX_bz0-2l72dlNl9H3UuNfxCWwp8sPz | 09:27:36 March 06, 2025\nGot an HTTP 302 response at crawl time\nRedirecting to...\nhttps://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2Fphoto.php%3Ffbid%3D551960552369167%26set%3Da.112646526300574%26type%3D3%26eid%3DARA1wOXSL8gp3ZK9Edp1G96R3fZiRuCdtHhEvG1VOPJ4DE3iXkX_bz0-2l72dlNl9H3UuNfxCWwp8sPz\n\nAll 50 states have legislation requiring specified vaccines for students. Although exemptions vary from state to state, all school immunization laws grant exemptions to children for medical reasons.",
+                        "span": [
+                            1,
+                            2
+                        ],
+                        "score": 36.90585736222798,
+                        "relevant_output": "Rating: [[Relevant]]  \n",
+                        "relevant_score": 1,
+                        "pre_context": "Ask the publishers to restore access to 500,000+ books.",
+                        "post_context": "There are 44 states and Washington D.C. that grant religious exemptions for people who have religious objections to immunizations."
+                    }
+                ],
+                "support_output": "Rating: [[Partially supported]]  \n",
+                "support_score": 0.5
+            }
+        ],
+        "citation_recall": 0.75,
+        "citation_precision": 1.0,
+        "citation_f1": 0.8571428571428571,
+        "gpt_usage": {
+            "prompt_tokens": 1523,
+            "completion_tokens": 124
+        }
+    },
+    {
+        "idx": 76,
+        "dataset": "averitec_short_ans",
+        "query": "You are an expert fact-checker. You are provided with a claim and related evidence. Based only on the provided evidence, determine if the given claim is either supported, refuted, has conflicting evidence, or has not enough evidence to determine its veracity. Write a single sentence that states your verdict and the main reason for it, referencing and synthesizing the most relevant pieces of evidence that support your verdict. Do not copy sentences from the evidence verbatim. Always paraphrase and synthesize the evidence in your own words.\n\nClaim: Madagascar has found a coronavirus medicine that can wipe out the virus at any stage within a period of six days.",
+        "prediction": "<statement>Based on the provided evidence, the claim that Madagascar has found a coronavirus medicine that can wipe out the virus at any stage within a period of six days is not supported.<cite></cite></statement>\n\n<statement>The evidence shows that Madagascar has developed an herbal remedy called Covid-Organics, which is promoted as a treatment for COVID-19. However, the evidence also states that there is no scientific evidence that this remedy is effective against COVID-19, and medical experts have raised concerns about its safety.<cite>[1-1][4-4][11-13]</cite></statement>\n\n<statement>The evidence also indicates that there are currently no approved drugs for COVID-19 and numerous treatments and vaccines are currently being tested around the world.<cite>[2-2]</cite></statement>\n\n<statement>Therefore, the evidence does not support the claim that Madagascar has found a medicine that can wipe out COVID-19 within six days.<cite></cite></statement>",
+        "claim": "Madagascar has found a coronavirus medicine that can wipe out the virus at any stage within a period of six days.",
+        "label": "Refuted",
+        "pred_label": "Refuted",
+        "justification": "From the 3rd question and answer pair it seems that the medication has not been tasted against the virus just yet. Therefore, the claim is refuted",
+        "decomposed_model_answer": [
+            [],
+            [
+                "Madagascar has developed an herbal remedy called Covid-Organics.",
+                "Covid-Organics is promoted as a treatment for COVID-19.",
+                "There is no scientific evidence that Covid-Organics is effective against COVID-19.",
+                "Medical experts have raised concerns about the safety of Covid-Organics."
+            ],
+            [
+                "There are currently no approved drugs for COVID-19.",
+                "Numerous treatments and vaccines for COVID-19 are currently being tested around the world."
+            ],
+            []
+        ],
+        "statements": [
+            {
+                "statement": "Based on the provided evidence, the claim that Madagascar has found a coronavirus medicine that can wipe out the virus at any stage within a period of six days is not supported.",
+                "citation": [],
+                "support_output": "Analysis: The sentence in question is the opening statement of the response, which provides an overall verdict on the claim. It states that the claim \"is not supported\" based on the evidence. This is a summary judgment about the claim's veracity, not a statement that references or relies on a specific piece of evidence from the source text. According to the instructions, such verdict or judgment sentences, even if they make a factual assertion about the claim's status, are considered introductory or summary sentences and do not require a citation. The sentence does not mention any specific evidence, such as details about Covid-Organics, lack of scientific proof, or expert concerns; it only delivers the high-level conclusion.\n\nNeed Citation: [[No]]",
+                "support_score": 1
+            },
+            {
+                "statement": "The evidence shows that Madagascar has developed an herbal remedy called Covid-Organics, which is promoted as a treatment for COVID-19. However, the evidence also states that there is no scientific evidence that this remedy is effective against COVID-19, and medical experts have raised concerns about its safety.",
+                "citation": [
+                    {
+                        "cite": "Medical experts are critical of the drink, pointing out that no scientific tests have been done on it.\n\u201cThe scientific evidence that this is effective has not been proved. It\u2019s likely that it could actually harm the health of the population, particularly that of children,\u201d said the president of Madagascar\u2019s Academy of Medicine, Marcel Razanamparany, in a statement.",
+                        "span": [
+                            11,
+                            13
+                        ],
+                        "score": 7.2521562982172325,
+                        "relevant_output": "Rating: [[Relevant]]  \n",
+                        "relevant_score": 1,
+                        "pre_context": "The drink was developed by the Malagasy Institute of Applied Research, a private organization that for more than 30 years has researched the uses of Madagascar\u2019s traditional medicines. The label on the bottle does not list the ingredients but the president said it is made from artemisia, a bitterroot that is used in some malaria drugs.",
+                        "post_context": "With no approved drugs for COVID-19, some people around the world are resorting to unproven therapies, sometimes with the backing of government leaders. Rigorous testing of herbal and other traditional remedies is needed, say experts."
+                    },
+                    {
+                        "cite": "The announcement caught medical experts, who have scrambled to find a cure for the disease that has killed more than 252,000 and infected at least 3.6 million people globally, by surprise.",
+                        "span": [
+                            115,
+                            115
+                        ],
+                        "score": 2.7060440633579854,
+                        "relevant_output": "Rating: [[Irrelevant]]  \n",
+                        "relevant_score": 0,
+                        "pre_context": "In this case, antibiotics may be recommended by a health care provider.\n\nAs COVID-19 spread across Africa and leaders put their countries in lockdown, Madagascan President Andry Rajoelina last month launched an herbal remedy that he claimed could prevent and cure the disease.",
+                        "post_context": "More:\nRajoelina, a former DJ who in 2009 at the age of 34 became the continent's youngest national leader, claimed at the launch that the remedy, named Covid-Organics, had already cured two people.\n\"This herbal tea gives results in seven days,\" Rajoelina, 45, told journalists and diplomats in April."
+                    }
+                ],
+                "support_output": "Rating: [[Partially supported]]\n",
+                "support_score": 0.5
+            },
+            {
+                "statement": "The evidence also indicates that there are currently no approved drugs for COVID-19 and numerous treatments and vaccines are currently being tested around the world.",
+                "citation": [
+                    {
+                        "cite": "Madagascar\u2019s President Andry Rajoelina promoted the drink, Covid Organics, on national television saying it will \u201cchange the course of history.\u201d\nThere are no approved drugs for COVID-19 and numerous treatments and vaccines are currently being tested around the world.",
+                        "span": [
+                            2,
+                            2
+                        ],
+                        "score": 44.4333303579937,
+                        "relevant_output": "Rating: [[Relevant]]  \n",
+                        "relevant_score": 1,
+                        "pre_context": "Madagascar\u2019s president touts herbal drink against COVID-19\nANTANANARIVO, Madagascar (AP) \u2014 As their high school reopened after being closed for a month due to the coronavirus, students in Madagascar\u2019s capital city were given face masks and a small bottle of an herbal extract they were told to drink to protect them from COVID-19.\nMany grimacing at its bitter taste, the students swallowed the drink and entered school to resume classes, where they were now seated one to a desk instead of two, for safer distance.",
+                        "post_context": "Madagascar, an Indian Ocean island nation of 26 million people, currently has 128 recorded cases of Covid-19 and no deaths.\nThe herbal drink has not been scientifically tested and there\u2019s no proof it works against COVID-19."
+                    }
+                ],
+                "support_output": "Rating: [[Fully supported]]  \n",
+                "support_score": 1
+            },
+            {
+                "statement": "Therefore, the evidence does not support the claim that Madagascar has found a medicine that can wipe out COVID-19 within six days.",
+                "citation": [],
+                "support_output": "Analysis: The sentence in question is a concluding statement that summarizes the overall verdict of the response. It does not reference or rely on any specific piece of evidence from the source text, such as details about Covid-Organics, the lack of scientific evidence, or expert concerns. Instead, it restates the judgment that the claim is not supported, which is a summary of the analysis rather than a factual statement that requires a citation to a specific source passage.\n\nNeed Citation: [[No]]",
+                "support_score": 1
+            }
+        ],
+        "citation_recall": 0.875,
+        "citation_precision": 0.6666666666666666,
+        "citation_f1": 0.7567567567567567,
+        "gpt_usage": {
+            "prompt_tokens": 2792,
+            "completion_tokens": 289
+        }
+    },
+    {
+        "idx": 50,
+        "dataset": "averitec_short_ans",
+        "query": "You are an expert fact-checker. You are provided with a claim and related evidence. Based only on the provided evidence, determine if the given claim is either supported, refuted, has conflicting evidence, or has not enough evidence to determine its veracity. Write a single sentence that states your verdict and the main reason for it, referencing and synthesizing the most relevant pieces of evidence that support your verdict. Do not copy sentences from the evidence verbatim. Always paraphrase and synthesize the evidence in your own words.\n\nClaim: In May 2020 cases, numbers and deaths of COVID-19 were in decline, all over America.",
+        "prediction": "<statement>The claim that COVID-19 cases and deaths were in decline in May 2020 across America is only partially supported by the evidence provided.<cite></cite></statement>\n\n<statement>While it is true that some areas, particularly large cities and their suburbs, saw a decline in cases and deaths, other rural areas, particularly those with meatpacking plants and prisons, experienced a surge in cases and deaths.<cite>[17-17][289-289][290-290]</cite></statement>\n\n<statement>The evidence shows that the pandemic was shifting from urban to rural areas, and that hotspots were arising in isolated communities with poor access to healthcare and limited resources to combat the virus.<cite>[17-17][289-289][290-290]</cite></statement>",
+        "claim": "In May 2020 cases, numbers and deaths of COVID-19 were in decline, all over America.",
+        "label": "Conflicting Evidence/Cherrypicking",
+        "pred_label": "Conflicting Evidence/Cherrypicking",
+        "justification": "The answers and sources show that the claim is cherry picking as some states have declines and some don't.",
+        "decomposed_model_answer": [
+            [
+                "The claim that COVID-19 cases and deaths were in decline in May 2020 across America is only partially supported."
+            ],
+            [
+                "Some areas, particularly large cities and their suburbs, saw a decline in COVID-19 cases and deaths in May 2020.",
+                "Other rural areas, particularly those with meatpacking plants and prisons, experienced a surge in COVID-19 cases and deaths in May 2020."
+            ],
+            [
+                "The pandemic was shifting from urban to rural areas in May 2020.",
+                "Hotspots were arising in isolated communities with poor access to healthcare and limited resources to combat the virus in May 2020."
+            ]
+        ],
+        "statements": [
+            {
+                "statement": "The claim that COVID-19 cases and deaths were in decline in May 2020 across America is only partially supported by the evidence provided.",
+                "citation": [],
+                "support_output": "Analysis: The sentence in question is the opening statement of the response, which provides an overall verdict on the claim's veracity. It synthesizes the conclusion drawn from the evidence but does not itself reference or rely on a specific piece of evidence from the source text. Instead, it states the judgment (partially supported) that the subsequent sentences will explain. According to the provided guidelines, such a sentence stating an overall verdict or judgment without referencing specific evidence counts as an introductory or summary sentence and does not require a citation.\n\nNeed Citation: [[No]]",
+                "support_score": 1
+            },
+            {
+                "statement": "While it is true that some areas, particularly large cities and their suburbs, saw a decline in cases and deaths, other rural areas, particularly those with meatpacking plants and prisons, experienced a surge in cases and deaths.",
+                "citation": [
+                    {
+                        "cite": "Of the 25 rural counties with the highest per capita case rates, 20 have a meatpacking plant or prison where the virus took hold and spread with abandon, then leaped into the community when workers took it home.",
+                        "span": [
+                            331,
+                            331
+                        ],
+                        "score": 8.811434030532837,
+                        "relevant_output": "Rating: [[Relevant]]  \n",
+                        "relevant_score": 1,
+                        "pre_context": "Where and when hot spots arise in America\u2019s most isolated counties is, in part, a matter of chance. But crowded spaces, and populations with poor access to health care, quickly facilitate the spread.",
+                        "post_context": "Infection has raced through immigrant worker communities, where poverty or immigration status prevent some of the sick from seeking care and language barriers hinder access to information. It has taken hold in counties where residents flout social distancing guidelines or believe the pandemic to be exaggerated, the virus\u2019s lethality a myth spread by President Trump\u2019s political foes and a liberal media."
+                    },
+                    {
+                        "cite": "And I don\u2019t know how well they\u2019re going to be managed.\u201d\nAmerica\u2019s largest and most densely populated cities and suburbs still suffer more infections and deaths per capita, but those overall rates are increasing faster in smaller, rural counties where the virus has spread rapidly in the past month, the Post analysis found.",
+                        "span": [
+                            290,
+                            290
+                        ],
+                        "score": 1.6874227853308892,
+                        "relevant_output": "Rating: [[Relevant]]  \n",
+                        "relevant_score": 1,
+                        "pre_context": "Hawaii\n\u201cIt is coming, and it\u2019s going to be more of a checkerboard,\u201d said Tara Smith, a professor of epidemiology at Kent State University in Ohio. \u201cIt\u2019s not going to be a wave that spreads out uniformly over all of rural America; it\u2019s going to be hot spots that come and go.",
+                        "post_context": "In many of those places, where the health-care system is already stretched thin, even a minor surge in patients is enough to overwhelm.\nDeath rates decline in cities\nbut not in rural America\nThese charts show the number of covid-19 deaths\nper day for every 100,000 people in each\nof the CDC\u2019s six rural-urban categories."
+                    }
+                ],
+                "support_output": "Rating: [[Partially supported]]  \n",
+                "support_score": 0.5
+            },
+            {
+                "statement": "The evidence shows that the pandemic was shifting from urban to rural areas, and that hotspots were arising in isolated communities with poor access to healthcare and limited resources to combat the virus.",
+                "citation": [
+                    {
+                        "cite": "Where and when hot spots arise in America\u2019s most isolated counties is, in part, a matter of chance.",
+                        "span": [
+                            329,
+                            329
+                        ],
+                        "score": 12.352178255090708,
+                        "relevant_output": "Rating: [[Relevant]]\n",
+                        "relevant_score": 1,
+                        "pre_context": "A University of Texas study found last month that in counties with no reported cases, there\u2019s about a 10 percent chance the virus is spreading undetected. Elsewhere, it may only be a matter of time.",
+                        "post_context": "But crowded spaces, and populations with poor access to health care, quickly facilitate the spread.\nOf the 25 rural counties with the highest per capita case rates, 20 have a meatpacking plant or prison where the virus took hold and spread with abandon, then leaped into the community when workers took it home."
+                    },
+                    {
+                        "cite": "As the death toll nears 100,000, the disease caused by the virus has made a fundamental shift in who it touches and where it reaches in America, according to a Washington Post analysis of case data and interviews with public health professionals in several states. The pandemic that first struck in major metropolises is now increasingly finding its front line in the country\u2019s rural areas; counties with acres of farmland, cramped meatpacking plants, out-of-the-way prisons and few hospital beds.",
+                        "span": [
+                            16,
+                            17
+                        ],
+                        "score": 2.9414462179438257,
+                        "relevant_output": "Rating: [[Relevant]]  \n",
+                        "relevant_score": 1,
+                        "pre_context": "It tore through a pork processing plant and spread outward in a desolate stretch of the Oklahoma Panhandle. And in Colorado\u2019s sparsely populated eastern plains, the virus erupted in a nursing home and a pair of factories, burning through the crowded quarters of immigrant workers and a vulnerable elderly population.",
+                        "post_context": "Counties with early outbreaks\nhave flattened\nFourteen counties in New York, Michigan, Louisiana and Washington accounted for about half of the nation\u2019s coronavirus-related deaths through mid-April. Since then, deaths in other parts of the country have increased and are now where most of the fatalities occur."
+                    },
+                    {
+                        "cite": "\u201cIt\u2019s not going to be a wave that spreads out uniformly over all of rural America; it\u2019s going to be hot spots that come and go.",
+                        "span": [
+                            289,
+                            289
+                        ],
+                        "score": 2.5632517345276113,
+                        "relevant_output": "Rating: [[Relevant]]  \n",
+                        "relevant_score": 1,
+                        "pre_context": "Texas\nAlaska\nFla.\nHawaii\n\u201cIt is coming, and it\u2019s going to be more of a checkerboard,\u201d said Tara Smith, a professor of epidemiology at Kent State University in Ohio.",
+                        "post_context": "And I don\u2019t know how well they\u2019re going to be managed.\u201d\nAmerica\u2019s largest and most densely populated cities and suburbs still suffer more infections and deaths per capita, but those overall rates are increasing faster in smaller, rural counties where the virus has spread rapidly in the past month, the Post analysis found.\nIn many of those places, where the health-care system is already stretched thin, even a minor surge in patients is enough to overwhelm."
+                    },
+                    {
+                        "cite": "Rural counties now have some of the highest rates of covid-19 cases and deaths in the country, topping even the hardest-hit New York City boroughs and signaling a new phase of the pandemic \u2014 one of halting, scattered outbreaks that could devastate still more of America\u2019s most vulnerable towns as states lift stay-at-home orders.",
+                        "span": [
+                            52,
+                            52
+                        ],
+                        "score": 2.3702638115875887,
+                        "relevant_output": "Rating: [[Relevant]]  \n",
+                        "relevant_score": 1,
+                        "pre_context": "Many of these communities are isolated and hard to reach. They were largely spared from the disease shutting down their states \u2014 until, suddenly, they weren\u2019t.",
+                        "post_context": "Change in reported\ncases since May 3\n7x more\ncases\nthan on\nMay 3\nLine height and color\nshow change in reported\ncases relative to May 3.\n4x\n2x\nLine thickness shows\nthe current number of cases\nrelative to county population\nLess\nMore\nMaine\nHuntingdon Co., Penn."
+                    }
+                ],
+                "support_output": "Rating: [[Fully supported]]  \n",
+                "support_score": 1
+            }
+        ],
+        "citation_recall": 0.8333333333333334,
+        "citation_precision": 1.0,
+        "citation_f1": 0.9090909090909091,
+        "gpt_usage": {
+            "prompt_tokens": 3123,
+            "completion_tokens": 183
+        }
     }
 ]
