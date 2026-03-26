@@ -6,3 +6,8 @@ def load_json(filepath):
         data = json.load(f)
 
     return data
+
+def save_json(filepath, content):
+
+    with open(filepath, "w") as f:
+        json.dump(content, f, indent=4)
