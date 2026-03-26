@@ -30,8 +30,8 @@
                         "score": 0.9903458952903748,
                         "relevant_output": "Rating: [[Irrelevant]]  \n",
                         "relevant_score": 0,
-                        "pre_context": "30, during a speech in Michigan, he said: \u201cWe have it very well under control. We have very little problem in this country at this moment \u2014 five.",
-                        "post_context": "Jan. 31\nTrump took his only early, aggressive action against the virus on Jan."
+                        "pre_context": "During a speech in Michigan, he said: \u201cWe have it very well under control. We have very little problem in this country at this moment \u2014 five.",
+                        "post_context": ""
                     },
                     {
                         "cite": "29, he said a vaccine would be available \u201cvery quickly\u201d and \u201cvery rapidly\u201d and praised his administration\u2019s actions as \u201cthe most aggressive taken by any country.\u201d None of these claims were true.",
@@ -42,8 +42,8 @@
                         "score": 0.9902148246765137,
                         "relevant_output": "Rating: [[Irrelevant]]  \n",
                         "relevant_score": 0,
-                        "pre_context": "27, he predicted: \u201cIt\u2019s going to disappear. One day \u2014 it\u2019s like a miracle \u2014 it will disappear.\u201d On Feb.",
-                        "post_context": "By the end of February, there were 85,403 confirmed cases, in 55 countries around the world.\nEarly March\nAlmost two decades ago, during George W. Bush\u2019s presidency, the federal government developed guidelines for communicating during a public-health crisis."
+                        "pre_context": "He predicted: \u201cIt\u2019s going to disappear. One day \u2014 it\u2019s like a miracle \u2014 it will disappear.\u201d On Feb.",
+                        "post_context": "By the end of February, there were 85,403 confirmed cases, in 55 countries around the world."
                     },
                     {
                         "cite": "He criticized CNN and MSNBC for \u201cpanicking markets.\u201d He said at a South Carolina rally \u2014 falsely \u2014 that \u201cthe Democrat policy of open borders\u201d had brought the virus into the country.",
@@ -66,7 +66,7 @@
                         "score": 0.987694263458252,
                         "relevant_output": "Rating: [[Relevant]]  \n",
                         "relevant_score": 1,
-                        "pre_context": "Opinion Columnist\nPresident Trump made his first public comments about the coronavirus on Jan. 22, in a television interview from Davos with CNBC\u2019s Joe Kernen.",
+                        "pre_context": "President Trump made his first public comments about the coronavirus on Jan. 22, in a television interview from Davos with CNBC\u2019s Joe Kernen.",
                         "post_context": "Not at all. And we have it totally under control."
                     }
                 ],
