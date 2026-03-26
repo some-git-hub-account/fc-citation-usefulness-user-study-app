@@ -234,9 +234,10 @@ def render_evidences(results, col_r):
 
     with col_r:
         st.markdown(f"""
-            <div class="evidence-heading">
+            <span class="evidence-heading">
                 Evidence snippets:
-            </div>
+            </span>
+            <span style='font-size: 0.9rem;'>The actual content cited by the AI-system is displayed in <span style='font-weight:600;'>bold</span>. Refer to the additional text if you need more context.</span>
         """, unsafe_allow_html=True) 
 
     statements = results["statements"]
