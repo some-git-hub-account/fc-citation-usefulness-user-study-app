@@ -288,7 +288,7 @@ def main():
     # read query parameters for which claim and which experiment group to display
     query_params = st.query_params
     exp_group = query_params["exp_group"]
-    idx = int(query_params["item"])
+    idx = int(query_params["item"]) - 1  # item query param starts at 1
 
     # load corresponding results 
     if exp_group == "A":
