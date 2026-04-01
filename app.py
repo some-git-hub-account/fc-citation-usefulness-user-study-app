@@ -68,13 +68,8 @@ css_layout = f"""
     margin-top: 10px;
     font-style: italic;
 }}
-.drops-table{{
-    margin: 0 40px 1.5rem 40px;
-}}
-td, th{{
-    padding: 6px 12px;
-    border: 1px solid #ddd;
-    background-color: {table_color};
+.cite-str {{
+    font-weight: 600;
 }}
 """
 
@@ -98,7 +93,6 @@ css_highlighting = f"""
         background-color: {background_color};
     }}
 }}
-
 """
 
 st.html(f"<style>{css_layout}</style>")
@@ -238,7 +232,7 @@ def render_model_answer(results, span2citestr, col_l):
             answer_text += " "
 
             for cite_str in sent_citation_strs:
-                answer_text += f"<span>{span2citestr.get(cite_str)}</span>"
+                answer_text += f"<span class='cite-str'>{span2citestr.get(cite_str)}</span>"
             answer_text += "\n\n"
 
         return answer_text
