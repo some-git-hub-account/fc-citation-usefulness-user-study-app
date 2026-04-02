@@ -8,6 +8,7 @@ secondary_background_color = "#F0F2F6"
 text_color = "#181818"
 secondary_link_color = "#6c757d"
 table_color = "#ffffff"
+cite_color = "#2A2AC8"
 
 # CSS for page layout
 css_layout = f"""
@@ -58,9 +59,6 @@ css_layout = f"""
     font-weight: 600;
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }}
 .statement-header {{
     margin-left: 40px;
@@ -70,6 +68,7 @@ css_layout = f"""
 }}
 .cite-str {{
     font-weight: 600;
+    color: {cite_color}
 }}
 """
 
@@ -285,7 +284,8 @@ def render_evidences(results, span2citestr, col_r):
             evidence_html += f"""
             <div class="evidence-card">
                 <div class="evidence-title">
-                    <span>Evidence snippet {span2citestr.get(cite_str)}</span>
+                    <span>Evidence snippet </span>
+                    <span style="color: {cite_color};">{span2citestr.get(cite_str)}</span>
                 </div>
                 <div class="evidence-content">
                     <span style='font-weight: 300;'>{pre_context}</span>
