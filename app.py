@@ -318,7 +318,6 @@ def main():
 
     # mapping to simplify the cite_strs to start at 1,2,3,...
     span2citestr = get_mapping_spans2cite_strs(results)
-    st.write(span2citestr)
 
     # display content
     render_claim(results, col_l)
