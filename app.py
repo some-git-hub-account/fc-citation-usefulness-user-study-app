@@ -181,17 +181,17 @@ def render_sidebar():
 
     return cc_metrics_results_path, eval_metrics_results_path, idx
 
-def render_claim(results, col_l):
+def render_claim(results, col):
 
     # claim
-    with col_l:
+    with col:
         st.markdown(f"""
                     <div class="claim">
                         <span class="section-label">Claim:</span> {results.get("claim")}
                     </div>
         """, unsafe_allow_html=True) 
 
-def render_verdicts(results, col_l):
+def render_verdict(results, col):
 
     LABELS = ['Supported', 'Refuted', 'Not Enough Evidence', 'Conflicting Evidence/Cherrypicking']
     COLORS = ["#28a745", "#cc1414", "#2995bd", "#fac104"]
@@ -200,7 +200,7 @@ def render_verdicts(results, col_l):
     pred_label = results.get("pred_label")
 
     # predicted verdict
-    with col_l:
+    with col:
         idx = LABELS.index(pred_label)
         st.markdown(f"""
         <div class="verdict" style="background-color: {COLORS[idx]};">
@@ -208,36 +208,37 @@ def render_verdicts(results, col_l):
         </div>
         """, unsafe_allow_html=True)
 
-def render_model_answer(results, span2citestr, col_l):
+def render_model_answer(results, span2citestr, col, include_citations=True):
 
-    def build_answer_text(results):
+    def build_answer_text(results, include_citations):
         answer_text = "\n"
         for sc in results["statements"]:
-            statement = sc["statement"]
-            citation = sc["citation"]
-
-            sent_citation_strs = []
-            if citation:
-                spans = [c["span"] for c in citation]
-                for span in spans:
-                    start, end = span
-                    if start == end:
-                        cite_str = f"[{start}]"
-                    else:
-                        cite_str = f"[{start}-{end}]"
-                    sent_citation_strs.append(cite_str)
         
+            statement = sc["statement"]
             answer_text += f"<span>{process_text(statement)}</span>"
             answer_text += " "
+            
+            if include_citations:
+                citation = sc["citation"]
+                sent_citation_strs = []
+                if citation:
+                    spans = [c["span"] for c in citation]
+                    for span in spans:
+                        start, end = span
+                        if start == end:
+                            cite_str = f"[{start}]"
+                        else:
+                            cite_str = f"[{start}-{end}]"
+                        sent_citation_strs.append(cite_str)
 
-            for cite_str in sent_citation_strs:
-                answer_text += f"<span class='cite-str'>{span2citestr.get(cite_str)}</span>"
-            answer_text += "\n\n"
+                for cite_str in sent_citation_strs:
+                    answer_text += f"<span class='cite-str'>{span2citestr.get(cite_str)}</span>"
+                answer_text += "\n\n"
 
         return answer_text
     
-    answer_text = build_answer_text(results)
-    with col_l:
+    answer_text = build_answer_text(results, include_citations=include_citations)
+    with col:
         st.markdown(f"""
             <div class="justification" id="justification">
                 <span class="section-label">Justification:</span> 
@@ -299,8 +300,6 @@ def render_evidences(results, span2citestr, col_r):
         st.html(f"<div class='evidence-container'>{evidence_html}</div>")
             
 def main():
-    st.set_page_config(layout="wide")
-
     # read query parameters for which claim and which experiment group to display
     query_params = st.query_params
     exp_group = query_params["exp_group"]
@@ -311,19 +310,38 @@ def main():
         results_path = "./data/results_faithful.json"
     elif exp_group == "B":
         results_path = "./data/results_unfaithful.json"
+    elif exp_group == "C":
+        results_path = "./data/results_faithful.json"  # does not matter since no citations are displayed
     results = load_json(results_path)[idx]
 
-    # layout
-    col_l, col_r = st.columns([1,1])
+    # with citations
+    if exp_group == "A" or exp_group == "B":
+        st.set_page_config(layout="wide")
 
-    # mapping to simplify the cite_strs to start at 1,2,3,...
-    span2citestr = get_mapping_spans2cite_strs(results)
+        # layout: two columns left and right
+        col_l, col_r = st.columns([1,1])
 
-    # display content
-    render_claim(results, col_l)
-    render_verdicts(results, col_l)
-    render_model_answer(results, span2citestr, col_l)
-    render_evidences(results, span2citestr, col_r)
+        # mapping to simplify the cite_strs to start at 1,2,3,...
+        span2citestr = get_mapping_spans2cite_strs(results)
+
+        # display content
+        render_claim(results, col_l)
+        render_verdict(results, col_l)
+        render_model_answer(results, span2citestr, col_l)
+        render_evidences(results, span2citestr, col_r)
+
+    # no citations
+    elif exp_group == "C":
+        st.set_page_config(layout="centered")
+
+        # layout: only single column in the center
+        col_center = st.container() 
+
+        # display content 
+        render_claim(results, col_center)
+        render_verdict(results, col_center)
+        render_model_answer(results, None, col_center, include_citations=False)
+        
     
 
 if __name__ == "__main__":
