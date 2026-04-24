@@ -225,3 +225,4 @@ pyrightconfig.json
 *.ipynb 
 .devcontainer
 SurveyJS/
+data/_old_data/
